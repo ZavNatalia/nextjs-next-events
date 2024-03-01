@@ -1,9 +1,11 @@
-import MainHeader from '@/components/MainHeader';
+import { getFeaturedEvents } from '@/dummy-data';
+import EventList from '@/components/events/EventList';
 
 export default function Home() {
+    const featuredEvents = getFeaturedEvents();
   return (
     <main className="p-6">
-      <h2>Home page</h2>
+        <EventList items={featuredEvents}/>
     </main>
   );
 }

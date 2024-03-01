@@ -2,16 +2,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import Logo from '@/public/static/images/logo.png'
+import Logo from '@/public/images/logo.png'
 
 export default function MainHeader() {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
 
     const handleOpenCloseMenu = () => {
         setIsOpenMenu(prevState => !prevState);
-    }
-    const handleCloseMenu = () => {
-        setIsOpenMenu(false);
     }
 
     return (<nav className="bg-gray-800">

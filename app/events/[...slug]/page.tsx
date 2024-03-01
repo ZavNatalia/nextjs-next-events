@@ -1,6 +1,6 @@
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 
-export default function EventPage({params}: {params: Params}) {
+export default function EventDetailPage({params}: {params: Params}) {
 
     return (
         <main className="p-6">

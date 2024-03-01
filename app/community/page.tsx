@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import UserPhoto1 from '@/public/static/images/photo-user-1.webp';
-import UserPhoto2 from '@/public/static/images/photo-user-2.png';
+import UserPhoto1 from '@/public/images/photo-user-1.webp';
+import UserPhoto2 from '@/public/images/photo-user-2.png';
 
 export default function CommunityPage() {
 
