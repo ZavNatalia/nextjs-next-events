@@ -1,9 +1,14 @@
 import { IEventItem } from '@/interfaces/event-item.interface';
 import Image from 'next/image';
-import Link from 'next/link';
+import DateIcon from '../icons/date-icon';
+import AddressIcon from '../icons/address-icon';
+import ArrowRightIcon from '../icons/arrow-right-icon';
+import Button from '@/components/ui/button/Button';
+
 interface EventItemProps {
     event: IEventItem;
 }
+
 export default function EventItem({event}: EventItemProps) {
     const {date, location, image, title, id} = event;
 
@@ -19,20 +24,29 @@ export default function EventItem({event}: EventItemProps) {
     return (
         <li className='overflow-hidden flex m-4 rounded-2xl bg-gray-50 shadow-md gap-2
         ring-1 ring-inset ring-gray-900/5'>
-            <Image src={'/' + image} alt={title} width={360} height={360} priority className={'h-auto'}/>
-            <div className='w-full px-3 py-5'>
-                <div>
-                    <h2 className='text-4xl font-bold text-gray-900 mb-4 text-left'>{title}</h2>
-                </div>
-                <div className='flex gap-1 items-center text-gray-700 font-bold my-2'>
+            <Image src={'/' + image} alt={title} width={360} height={360} priority className='h-auto'/>
+            <div className='w-full py-5 px-5 flex flex-col gap-1'>
+                <h2 className='text-3xl font-bold text-gray-900 mb-4 text-left'>{title}</h2>
+                <div className='flex gap-2 items-center text-gray-600 font-bold '>
+                    <span className='inline-flex justify-center items-center h-7 w-7 '>
+                        <DateIcon/>
+                    </span>
                     <time>{humanReadableDate}</time>
                 </div>
-                <div className='flex gap-1 items-center text-gray-700 my-1 whitespace-pre-wrap'>
+                <div className='flex gap-2 items-center text-gray-600 my-1 whitespace-pre-wrap'>
+                    <span className='inline-flex justify-center items-center h-7 w-7 '>
+                        <AddressIcon/>
+                    </span>
                     <address>{formattedAddress}</address>
                 </div>
-                <Link href={exploreLink} className='items-end'>
-                    Explore Event
-                </Link>
+                <div className='self-end mt-2'>
+                    <Button link={exploreLink}>
+                        <span className='text-md'>Explore Event</span>
+                        <span className='inline-flex justify-center items-center h-6 w-5 ml-2 text-white'>
+                        <ArrowRightIcon/>
+                    </span>
+                    </Button>
+                </div>
             </div>
         </li>
     )
