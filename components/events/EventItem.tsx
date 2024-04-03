@@ -22,7 +22,7 @@ export default function EventItem({event}: EventItemProps) {
     const exploreLink = `/events/${id}`;
 
     return (
-        <li className='overflow-hidden flex m-4 rounded-2xl bg-gray-50 shadow-md gap-2
+        <li className='overflow-hidden flex rounded-2xl bg-gray-50 shadow-md gap-2
         ring-1 ring-inset ring-gray-900/5'>
             <Image src={'/' + image} alt={title} width={360} height={360} priority className='h-auto'/>
             <div className='w-full py-5 px-5 flex flex-col gap-1'>

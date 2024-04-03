@@ -1,12 +1,15 @@
-import Link from 'next/link';
+
+import EventList from '@/components/events/EventList';
+import { getAllEvents } from '@/dummy-data';
+import EventsSearch from '@/components/events/EventsSearch';
 
 export default function EventsPage() {
-
+    const events = getAllEvents();
     return (
-        <main className="p-6">
-            <h2>Events Page</h2>
-            <Link href='/events/1' className="p-6">1</Link>
-            <Link href='/events/2' className="p-6">2</Link>
-        </main>
+        <>
+            <h2 className='text-center font-bold text-3xl my-8'>All Events Page</h2>
+            <EventsSearch  />
+            <EventList items={events}/>
+        </>
     )
 }
