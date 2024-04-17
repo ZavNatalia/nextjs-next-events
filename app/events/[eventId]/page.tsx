@@ -4,6 +4,7 @@ import EventSummary from '@/components/event-detail/event-summary';
 import EventLogistics from '@/components/event-detail/event-logistics';
 import EventContent from '@/components/event-detail/event-content';
 import { IEventItem } from '@/interfaces/event-item.interface';
+import ErrorAlert from '@/components/error-alert/ErrorAlert';
 
 
 type Props = {
@@ -17,7 +18,7 @@ export default function EventDetailPage({params}: Props) {
     const event: IEventItem | undefined = getEventById(eventId);
 
     if (!event) {
-        return <p>No event found!</p>
+        return <ErrorAlert text='No event found!' buttonTitle='Return to the main page' buttonLink='/'/>
     }
 
     return (
